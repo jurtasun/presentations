@@ -1,0 +1,9 @@
+Dr. Jesús Urtasun Elizari
+LMS Bioinformatics & Imperial College London
+
+Resolving nanometric scales: From genomic sequencing to SR imaging of chromatin
+
+The field of genomics ranges from...
+thourout the years diffraction has been found to be a limit on the way small scales can be accesded by classic microscopy.
+Nevertheless, modert techniques such as SR imagin techniques allow for ... chromatin accesibility.
+We present here a quick overview of how Computational ap;roaches, from deep learning to Monte Carlo algorithms can be applied to analyting SR data.
