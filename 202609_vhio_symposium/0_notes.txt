@@ -1,0 +1,80 @@
+
+
+How epigenetic marks affect/ talk to each other
+
+DNA: 5mC 5hmC, ONT
+
+5mC is normally repressive
+
+
+Histtones: h3k27me3 / ub1, also represive
+Mutually exclusive del 5mC
+
+
+
+RNA: 
+
+
+
+Dtko no hay nanopore porque se espera 5mC and 5hmC
+
+
+
+Lmx1b: CR
+	ub1 no cambia, da igual que le quitemos Polycom
+	h3k27: wt ok, pero en DTKO hay mas abundant: maybe dna met en otros, y al quitarlo se compensa con poly comb 
+	eso no debería haber nada. Pero ezh2 tiene una primahermana que se llama ezh1, que metida las 
+
+
+Lmx1b: RNA
+
+
+
+
+Lmx1b: ONT
+	EKO 5hmC algunas / bastantes, igual que el WT
+	TTKO las 5hmC desaparecen, pero no aumentan mucho las 5mC 
+	
+
+
+
+Sample1 wt
+Sample2 ttko
+Sample3 eko
+
+
+
+
+Dorado > mod kit > diff meth regions (dmd)
+
+
+
+
+
+----------------------------------
+
+Mikel
+
+
+200 patients. Neoadjuvant: chime + cirugia. 1st systemic treatment (blood o subcutaneous) then cirugia 
+	inmunoterapia, algún anticuerpo monoclonal, contra CD19 o similares. I we can predictivo how the treatment will go, with molecula rmakers, Y LA RECAIDA
+
+
+Clasificar cuales son los genes mas importante para el cancer de ovaerio. 50 mutados el p53, o 100 tiene mutado el tal tal tal y tal.
+Buscar cosas significativas que diferencien a los diferentes pacientes
+
+
+Kaplan meier curves per cohort (t hasta el evento (recaida o muerte)
+
+
+Como definirias la MRD, en oncología o en cancer de ovario. "Yo después del tratamiento, entiendo que he quitado todas las células malas, pero como lo cuantifico." De 10-3 a 10-5/6 de sensibilidad. En hematologías, con flow citometry, or NGS, llegamos a detectar una célula de cada 100.000. si la MRD es negativa, el paciente suele ir mejor.
+
+
+**Si después de detectar ctDNA hay correlación con recaídas o no.**
+
+
+Cuidado con el ruido y al analysis bioinformatico. 
+
+
+
+
