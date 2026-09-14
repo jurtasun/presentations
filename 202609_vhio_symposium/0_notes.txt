@@ -78,3 +78,141 @@ Cuidado con el ruido y al analysis bioinformatico.
 
 
 
+
+
+
+
+--------
+
+Iria
+
+regulation of spermatogenesis
+
+m6A: la mas abundante
+m1A, m5C:
+pseudouridine: diff efects dependiendo del transcript, if mitotic or meiotic
+
+mouse testis: mRNA
+
+QC:
+	0.5 - 2 kbp read lengh mean
+	Q score histogram ~ 15-20; worse over time, stop after 75h
+	pore activity saturated, when and why
+
+
+
+Modification calls (m6A, m5C, etc.) live in the MM / ML BAM tags that Dorado writes during basecalling
+Mod Matrix (MM) site
+Mod likelihood (ML) likelihood
+
+
+pod5 (raw signal)
+   │
+   ▼
+dorado basecaller  ← modifications are called HERE, at basecalling, from raw signal
+   (base model + m6A_DRACH@v1 + m5C_2OmeC@v1)
+   │
+   │  every read gets: sequence + per-base quality + MM/ML tags
+   │  (MM/ML = the modification calls: which positions, which mod, what probability)
+   │
+   ▼
+unaligned BAM (uBAM)  — MM/ML tags already baked in, alignment-independent
+   │
+   ▼
+minimap2  (or dorado aligner, which wraps minimap2)  ← MUST use -y flag
+   │
+   ▼
+aligned BAM  — MM/ML tags carried through, now positioned against GRCm39
+
+
+
+ dorado no tiene model para m1A 
+
+
+
+module load miniconda3
+
+conda create -n ont_modqc -c bioconda -c conda-forge python=3.10 pod5 pysam samtools ont-modkit -y
+
+conda activate ont_modqc
+which pod5
+which modkit
+
+
+```
+(ont_modqc) [jurtasun@compute002(ocf-steel-2206-0) 20260819_1353_P2S-00854-A_PBO62829_9f106dff]$ pod5 view "${POD5}" -L
+read_id                      Read UUID
+filename                     Source pod5 filename
+read_number                  Read number
+channel                      1-indexed channel
+mux                          1-indexed well
+end_reason                   End reason string
+start_time                   Seconds since the run start to the first sample of this read
+start_sample                 Samples recorded on this channel since run start to the first sample of this read
+duration                     Seconds of sampling for this read
+num_samples                  Number of signal samples
+minknow_events               Number of minknow events that this read contains
+sample_rate                  Number of samples recorded each second
+median_before                Current level in this well before the read
+predicted_scaling_scale      Scale for predicted read scaling
+predicted_scaling_shift      Shift for predicted read scaling
+tracked_scaling_scale        Scale for tracked read scaling
+tracked_scaling_shift        Shift for tracked read scaling
+num_reads_since_mux_change   Number of selected reads since the last mux change on this channel
+time_since_mux_change        Seconds since the last mux change on this channel
+run_id                       Run UUID
+sample_id                    User-supplied name for the sample
+experiment_id                User-supplied name for the experiment
+flow_cell_id                 The flow cell id
+pore_type                    Name of the pore in this well
+open_pore_level              The tracked open pore level for this read
+expected_open_pore_level     The expected open pore level for this read
+selected_read_level          The selected pore level for this read
+
+(ont_modqc) [jurtasun@compute002(ocf-steel-2206-0) 20260819_1353_P2S-00854-A_PBO62829_9f106dff]$ pod5 view "${POD5}" --include "read_id,channel,num_samples,median_before,end_reason" | head -n 11
+read_id	channel	end_reason	num_samples	median_before
+sys:1: UserWarning: Extension type 'minknow.uuid' is not registered; loading as its storage type.
+
+To avoid this warning, register the extension type or set environment variable 'POLARS_UNKNOWN_EXTENSION_TYPE_BEHAVIOR' to 'load_as_storage' or 'load_as_extension'.
+
+In Polars 2.0, the default behavior will change to 'load_as_extension'.
+da5fcea4-fd56-4743-8139-c37f13b63814	2691	unblock_mux_change	556110	NaN
+496e9895-f492-4905-9ddf-a408b75e3f9f	2691	unblock_mux_change	563950	NaN
+cb465d17-766f-4a06-8b08-ce97917b908e	2691	unblock_mux_change	534228	NaN
+08d35251-bc1a-4145-adae-d4ef46ebc441	2691	unblock_mux_change	684523	NaN
+bfe1c52c-6477-40d3-b68e-0a5655dae72b	2378	unblock_mux_change	600374	NaN
+4dcc5c47-4f11-4134-9297-963004de07f3	2691	unblock_mux_change	600089	NaN
+d19db972-c0ef-4bed-9bc1-b9f20641659e	2691	unblock_mux_change	780724	NaN
+99f9c3b3-c432-49c4-a23c-e9c784427412	2691	unblock_mux_change	1013228	NaN
+b2058928-6817-4a3d-8048-5488ee5e1eb1	2691	analysis_config_change	640189	NaN
+3f6fa8ee-e65e-42f4-942f-61b7ed688f53	2370	signal_positive	537956	185.79669189
+```
+
+
+```
+BAM=bam_pass/<some_file>.bam   # or your test_modcalls.bam from the SUP+modbase quick check
+
+# 1) does the header show which basecalling/modbase models were used
+samtools view -H "${BAM}" | grep -i 'PG\|basecall\|modbase\|DS:'
+
+# 2) look at tags on a single read to see if MM/ML are present at all
+samtools view "${BAM}" | head -1 | tr '\t' '\n' | grep -E 'MM:|ML:'
+
+# 3) count how many reads actually carry modification tags (vs total reads)
+echo "reads with MM tag: $(samtools view "${BAM}" | grep -c 'MM:Z:')"
+echo "total reads:        $(samtools view -c "${BAM}")"
+
+# 4) proper summary if modkit is available (env: ont_modqc)
+modkit summary "${BAM}"
+```
+
+
+
+
+
+------
+
+Append bib also to Presbooks
+Reviewers: Alvaro Mozota Frauca Alberto
+Descriptions
+Sentence
