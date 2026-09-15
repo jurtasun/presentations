@@ -216,3 +216,17 @@ Append bib also to Presbooks
 Reviewers: Alvaro Mozota Frauca Alberto
 Descriptions
 Sentence
+
+
+
+
+Hasindu Gamaarachchi et al,. Simulation of nanopore sequencing signal data with tunable parameters, Genome Research, https://doi.org/10.1101/gr.278730.123
+
+A M Grawenda & E O'Neill, Clinical utility of RASSF1A methylation in human malignancies, Br J Cancer 113, 372–381, https://doi.org/10.1038/bjc.2015.221
+
+
+nf-core/nanoseq — community-maintained Nextflow pipeline for nanopore demultiplexing, QC, alignment, and methylation calling: github.com/nf-core/nanoseq
+
+EPI2ME Labs wf-human-variation — Oxford Nanopore's own official workflow, includes basecalling, alignment, variant calling and 5mC/5hmC methylation modules: github.com/epi2me-labs/wf-human-variation
+
+NANOME — published consensus nanopore DNA-methylation-detection pipeline, combining multiple modbase-calling tools for higher-confidence calls: github.com/LabShengLi/nanome
