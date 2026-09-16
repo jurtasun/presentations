@@ -11,11 +11,6 @@ Histtones: h3k27me3 / ub1, also represive
 Mutually exclusive del 5mC
 
 
-
-RNA: 
-
-
-
 Dtko no hay nanopore porque se espera 5mC and 5hmC
 
 
@@ -49,8 +44,6 @@ Dorado > mod kit > diff meth regions (dmd)
 
 
 
-
-
 ----------------------------------
 
 Mikel
@@ -74,7 +67,6 @@ Como definirias la MRD, en oncología o en cancer de ovario. "Yo después del tr
 
 
 Cuidado con el ruido y al analysis bioinformatico. 
-
 
 
 
@@ -230,3 +222,40 @@ nf-core/nanoseq — community-maintained Nextflow pipeline for nanopore demultip
 EPI2ME Labs wf-human-variation — Oxford Nanopore's own official workflow, includes basecalling, alignment, variant calling and 5mC/5hmC methylation modules: github.com/epi2me-labs/wf-human-variation
 
 NANOME — published consensus nanopore DNA-methylation-detection pipeline, combining multiple modbase-calling tools for higher-confidence calls: github.com/LabShengLi/nanome
+
+Hampel/MAD-based QC — McCarthy, D.J., Campbell, K.R., Lun, A.T.L. & Wills, Q.F. Scater: pre-processing, quality control, normalization and visualization of single-cell RNA-seq data in R. doi: 10.1093/bioinformatics/btw777
+
+
+
+
+
+
+Competition shapes the landscape of X-chromosome-linked genetic diversity,
+Nature Genetics, https://www.nature.com/articles/s41588-024-01840-5⁠
+
+Different transcriptional activities of Mycobacterium tuberculosis PhoPR systems,
+Access Microbiology: https://www.microbiologyresearch.org/content/journal/acmi/10.1099/acmi.0.001087.v2⁠
+
+The dynamics of ciliogenesis in prepubertal mouse meiosis reveals new clues,
+Frontiers in Cell and Development Biology: https://www.frontiersin.org/articles/10.3389/fcell.2026.1910205⁠
+
+Introduction to probability theory and statistical inference,
+Pressbooks Open Source: https://github.com/jurtasun/2026_probability_statistics_hypothesis_testing⁠
+
+Higgs boson production at the LHC: fast and precise predictions in higher orders QCD,
+The European Physical Journal: https://link.springer.com/article/10.1140/epjc/s10052-022-10436-4⁠
+
+Towards hardware acceleration for parton densities estimation,
+Photon 2019 International Conference: https://arxiv.org/abs/1909.10547⁠
+
+
+
+
+Prognostic and predictive role of circulating tumor DNA (ctDNA) in stage III colon cancer treated with celecoxib: Findings from CALGB (Alliance)/SWOG 80702.
+Authors: Jonathan Andrew Nowak,
+
+DOI: 10.1200/JCO.2025.43.4_suppl.LBA14
+
+https://www.natera.com/oncology/signatera-advanced-cancer-detection/
+
+
