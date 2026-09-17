@@ -201,17 +201,6 @@ modkit summary "${BAM}"
 
 
 
-
-------
-
-Append bib also to Presbooks
-Reviewers: Alvaro Mozota Frauca Alberto
-Descriptions
-Sentence
-
-
-
-
 Hasindu Gamaarachchi et al,. Simulation of nanopore sequencing signal data with tunable parameters, Genome Research, https://doi.org/10.1101/gr.278730.123
 
 A M Grawenda & E O'Neill, Clinical utility of RASSF1A methylation in human malignancies, Br J Cancer 113, 372–381, https://doi.org/10.1038/bjc.2015.221
@@ -259,3 +248,26 @@ DOI: 10.1200/JCO.2025.43.4_suppl.LBA14
 https://www.natera.com/oncology/signatera-advanced-cancer-detection/
 
 
+
+Carolin Sauer, "The copy number and mutational landscape of recurrent ovarian high-grade serous carcinoma" (Nature Communications, 2023); DOI: https://doi.org/10.1038/s41467-023-39867-7
+
+José A. Seoane, "Chromatin regulators mediate anthracycline sensitivity" (Nature Medicine, 2019); DOI: https://doi.org/10.1038/s41591-019-0638-5
+
+
+
+
+
+
+Powerful signal, but requires resected tumor tissue upfront: our methylation approach is tissue-free by design, trading some signal strength for not needing that prior sample
+
+
+
+Our simulation fixes methylation as constant per population across all four timepoints: an assumption, not something we tested
+
+
+
+If a risk signature is visible at diagnosis in copy-number, it's worth asking whether a methylation-based one exists too: our RASSF1A promoter is a single fixed marker, not a signature search, so we haven't tested for this
+
+
+
+Directly reinforces our signal choice: this is published evidence that an epigenetic axis (not variants) can predict treatment benefit, which is exactly the case for methylation over somatic variants in my test
