@@ -271,3 +271,10 @@ If a risk signature is visible at diagnosis in copy-number, it's worth asking wh
 
 
 Directly reinforces our signal choice: this is published evidence that an epigenetic axis (not variants) can predict treatment benefit, which is exactly the case for methylation over somatic variants in my test
+
+
+
+
+
+Alberto Marin-Gonzalez & Taekjip Ha (하택집); Folding a broken genome: the versatile roles of cohesin in genome maintenance, Nature Reviews Genetics; DOI: https://doi.org/10.1038/s41576-026-00988-6
+
